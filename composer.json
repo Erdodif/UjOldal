@@ -1,0 +1,48 @@
+{
+    "name": "phill/uj-oldal",
+    "autoload": {
+        "psr-4": {
+            "Phill\\UjOldal\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Erdodif",
+            "email": "erdodif@gmail.com"
+        }
+    ],
+    "require": {
+        "johnpbloch/wordpress": "^5.9",
+        "wpackagist-theme/astra": "^3.7",
+        "wpackagist-plugin/wordpress-seo": "^18.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true,
+            "composer/installers": true
+        }
+    },
+    "repositories": [
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org",
+            "only":[
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        }
+    ],
+    "extra": {
+        "installer-paths": {
+            "wordpress/wp-content/mu-plugins/{$name}/": [
+                "wpackagist-plugin/akismet"
+            ],
+            "wordpress/wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "wordpress/wp-content/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        }
+    }
+}
